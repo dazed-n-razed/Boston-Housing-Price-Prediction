@@ -1,80 +1,76 @@
-An overview of the Boston Housing Price Prediction project 
+# 🏠 Boston Housing Price Prediction
 
-1. Data Preprocessing and EDA
-Dataset: Boston Housing Dataset (features like CRIM, RM, LSTAT, etc., with PRICE as the target)
+This project predicts housing prices in Boston suburbs using various regression and classification techniques. It explores key features affecting house prices and applies both traditional and ensemble learning models to deliver accurate predictions.
 
-Techniques:
+---
 
-Handling missing values (if any)
+## 📊 Dataset
 
-Normalization/standardization
+- **Source**: UCI Machine Learning Repository (Boston Housing Dataset)
+- **Target Variable**: `PRICE` (Median value of owner-occupied homes in $1000s)
+- **Features**: CRIM, ZN, INDUS, CHAS, NOX, RM, AGE, DIS, RAD, TAX, PTRATIO, B, LSTAT
 
-Exploratory Data Analysis (EDA): pair plots, correlation heatmaps, and distribution plots
+---
 
-Feature selection based on correlation and domain insight
+## ⚙️ Methods Used
 
-2. Regression Modeling (Predicting Continuous House Prices)
-Algorithms Used:
+### 🔍 1. Data Preprocessing & EDA
+- Checked for nulls and outliers
+- Normalized/standardized numerical features
+- Visualized data with:
+  - Heatmaps
+  - Correlation plots
+  - Distribution graphs
+- Selected top features based on correlation
 
-Linear Regression
+---
 
-Ridge Regression (L2 regularization)
+### 🤖 2. Regression Models (Continuous PRICE Prediction)
+- **Linear Regression**
+- **Ridge Regression**
+- **Lasso Regression**
+- **Decision Tree Regressor**
+- **Random Forest Regressor**
 
-Lasso Regression (L1 regularization)
+#### 📈 Evaluation Metrics:
+- MAE (Mean Absolute Error)
+- MSE (Mean Squared Error)
+- RMSE (Root Mean Squared Error)
+- R² Score
 
-Decision Tree Regressor
+---
 
-Random Forest Regressor
+### 🧠 3. Classification Models (PRICE → Categories)
+- Converted `PRICE` into:
+  - Binary: High-priced vs Low-priced homes
+  - Multi-class (if applicable)
+- **Models Used**:
+  - Logistic Regression
+  - Decision Tree Classifier
+  - Random Forest Classifier
+  - K-Nearest Neighbors (KNN)
 
-Evaluation Metrics:
+#### 🧪 Evaluation Metrics:
+- Accuracy
+- Precision, Recall, F1-Score
+- Confusion Matrix
+- ROC-AUC Score
 
-Mean Absolute Error (MAE)
+---
 
-Mean Squared Error (MSE)
+### 🔁 4. Ensemble Learning
+- **Bagging**: Random Forest
+- **Boosting**: Gradient Boosting / XGBoost (if used)
+- Improved accuracy and reduced overfitting
 
-Root Mean Squared Error (RMSE)
+---
 
-R² Score
+## 🔍 Key Insights
+- `RM`, `LSTAT`, and `PTRATIO` were among the most influential features
+- Ensemble models like Random Forest showed the best performance
+- Demonstrated flexibility by adapting regression into classification
 
-3. Classification Task (Converting PRICE to Categories)
-Approach:
+---
 
-Converted the continuous PRICE into binary or multi-class categories:
+## 📁 Project Structure
 
-Example: High-priced vs Low-priced homes using a median or custom threshold
-
-Algorithms Used:
-
-Logistic Regression
-
-Decision Tree Classifier
-
-Random Forest Classifier
-
-K-Nearest Neighbors (KNN)
-
-Classification Metrics:
-
-Accuracy
-
-Precision, Recall, F1-Score
-
-Confusion Matrix
-
-ROC-AUC (for binary classification)
-
-4. Ensemble Learning
-Methods:
-
-Bagging with Random Forests
-
-Boosting (e.g., Gradient Boosting or XGBoost if used)
-
-Helped improve accuracy and reduce overfitting
-
-5. Insights and Conclusions
-Identified the most important features influencing house prices (e.g., RM, LSTAT, PTRATIO)
-
-Found that ensemble models (like Random Forest) gave better performance in both regression and classification
-
-Demonstrated how regression models can be adapted into classification by bucketing price ranges
