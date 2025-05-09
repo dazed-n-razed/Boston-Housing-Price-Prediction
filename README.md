@@ -72,5 +72,3 @@ This project predicts housing prices in Boston suburbs using various regression 
 
 ---
 
-## 📁 Project Structure
-
